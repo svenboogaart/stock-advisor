@@ -7,7 +7,7 @@ from datetime import datetime
 
 
 class AlphaVantageStockReader(StockReader):
-    API_KEY = "your_alpha_vantage_api_key"  # Replace with your own Alpha Vantage API key
+    API_KEY = "YOUR_KEY_HERE"  # Replace with your own Alpha Vantage API key
 
     def get_stock(self, ticker: str) -> Stock:
         """
