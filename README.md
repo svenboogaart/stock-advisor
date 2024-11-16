@@ -87,7 +87,11 @@ Example Usage:
 Example Usage:
 `python stock_advisor.py --reader yahoo`
 
-**Note**, yahoo works without any changes, for **alpha_vantage** you will need to add your api key in `/models/stock_readers/alpha_vantage_reader.py`, in the line `apikey': self.API_KEY` 
+**Note**,
+yahoo works without any changes, 
+for **alpha_vantage** you will need to add your api key in `/models/stock_readers/alpha_vantage_reader.py`, 
+in the line `API_KEY = "YOUR_KEY_HERE"`
+
 #### `--when`
 - **Type:** `str`
 - **Default:** `close`
