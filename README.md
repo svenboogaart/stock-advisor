@@ -50,40 +50,61 @@ You can also get an overview peer year/week for example, 2024 week 45:
         "Highest Price": 63.36000061035156
     }
 
+
   
-
-## Inputs
-
-### `--ticker`
-- **Description**: The stock ticker symbol that you want to analyze.
-- **Default Value**: `GSPC` (for S&P 500)
-
-### `--reader`
-- **Description**: The stock reader to use for fetching information from a data source. You can choose from several implemented options, or extend the functionality as needed.
-- **Default Value**: `yahoo`
-- **Valid Options**: 
-  - `yahoo`
-  - `alpha_vantage`
-  
-## Getting Started
+## Using the stock advisor
 To get started with Stock Advisor, specify the stock ticker symbol and the desired reader option. The default settings will use the S&P 500 ticker symbol with the Yahoo reader.
 
-## Examples
-```bash
-# Using the default settings
-python stock_advisor.py
+### Install Dependencies
+Make sure you have python 3.x, else you will need to install python first.
 
-# Specifying a different ticker
-python stock_advisor.py --ticker AAPL
+`python --version`
 
-# Using alpha_vantage as the reader
-python stock_advisor.py --ticker AAPL --reader alpha_vantage
-```
+Install the requirements.
+
+`pip install -r requirements.txt`
+
+### run the script
+This section provides information on the command-line arguments available for this Python script. These arguments allow you to customize the behavior of the script when it is executed.
+Basic example without any parameters:
+
+`python stock_advisor.py`
+### Arguments
+
+#### `--ticker`
+- **Type:** `str`
+- **Default:** `^GSPC` (S&P 500)
+- **Help:** Specify the stock ticker symbol for which you want to retrieve data. If not provided, the script defaults to the S&P 500 index (`^GSPC`).
+
+Example Usage:
+`python stock_advisor.py --ticker AAPL`
+
+#### `--reader`
+- **Type:** `str`
+- **Default:** `yahoo`
+- **Help:** Select the stock reader source to use for data retrieval. The default value is set to `yahoo`, but you can specify other options based on your preferences or needs.
+
+Example Usage:
+`python stock_advisor.py --reader yahoo`
+
+#### `--when`
+- **Type:** `str`
+- **Default:** `close`
+- **Help:** Indicate whether to calculate values for the market open or close price. The default setting is to retrieve data at the market close. You can specify "open" if you want data for the opening price.
+
+Example Usage:
+`python stock_advisor.py --when open`
+
+### Full Command Example
+
+Here’s how you can combine these arguments in a single command:
+
+`python stock_advisor.py --ticker MSFT --reader yahoo --when open`
+
+This command analyzes the Microsoft (MSFT) ticker using the Yahoo stock reader.
 
 ## Contribution
-Feel free to extend the reader options or improve the existing functionality. Contributions to this project are welcome!
+Feel free to extend or improve the existing functionality. Contributions to this project are welcome!
 
 ### License
-This project is licensed under the MIT License.
-
-`You can modify any sections and add further details as per your project needs!`
+This project is licensed under the Apache Version 2.0 License.
